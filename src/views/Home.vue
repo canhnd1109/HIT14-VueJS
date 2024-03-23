@@ -1,0 +1,107 @@
+<template>
+    <div>
+        <input type="checkbox" class="checkbox" id="checkbox" @click="handleClick" />
+        <label for="checkbox" class="checkbox-label">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <span class="ball"></span>
+        </label>
+    </div>
+</template>
+
+<script setup>
+import { ref } from 'vue';
+
+const active = ref(false);
+
+const handleClick = () => {
+    active.value = !active.value;
+    active.value ? document.body.classList.add('dark') : document.body.classList.remove('dark');
+};
+</script>
+
+<style scoped lang="css">
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    min-height: 100vh;
+    margin: 0;
+    transition: background 0.2s linear;
+}
+
+body.dark h1,
+body.dark .support a {
+    color: #fff;
+}
+
+.checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+.checkbox-label {
+    background-color: #111;
+    width: 50px;
+    height: 26px;
+    border-radius: 50px;
+    position: relative;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fa-moon {
+    color: #f1c40f;
+}
+
+.fa-sun {
+    color: #f39c12;
+}
+
+.checkbox-label .ball {
+    background-color: #fff;
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    border-radius: 50%;
+    transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .checkbox-label .ball {
+    transform: translateX(24px);
+}
+
+/*  Support me if you like it */
+.support {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+
+.support a {
+    color: #292c35;
+    font-size: 32px;
+    backface-visibility: hidden;
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.support a:hover {
+    transform: scale(1.1);
+}
+</style>
