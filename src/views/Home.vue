@@ -20,7 +20,7 @@ const handleClick = () => {
 };
 </script>
 
-<style scoped lang="css">
+<style lang="css">
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 * {
@@ -40,6 +40,9 @@ body {
     transition: background 0.2s linear;
 }
 
+body.dark {
+    background-color: #111;
+}
 body.dark h1,
 body.dark .support a {
     color: #fff;
