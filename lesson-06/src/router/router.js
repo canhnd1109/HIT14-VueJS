@@ -14,5 +14,9 @@ export const router = createRouter({
             name: 'about',
             component : () => import ('../pages/About.vue'),
         },
+        {
+            path: '/user/:username',
+            name : 'profile',
+        }
     ]
 })

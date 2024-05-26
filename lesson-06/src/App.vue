@@ -11,16 +11,21 @@ const goAbout = () => {
 const goHome = () => {
   router.push('/')
 }
+
+const getUsers= () => {
+  router.push('/users')
+}
 </script>
 
 <template>
   <div>
-    <button @click="goAbout">Go to About</button>
     <button @click="goHome">Go to Home</button>
+    <button @click="goAbout">Go to About</button>
+    <!-- <button @click="getUsers  ">getUser</button> -->
   </div>
   <div>
-    <router-link to="/">Go to Home</router-link>
-    <router-link to="/about">Go to About</router-link>
+    <!-- <router-link to="/">Go to Home</router-link>
+    <router-link to="/about">Go to About</router-link> -->
     <router-view></router-view>
   </div>
 </template>
