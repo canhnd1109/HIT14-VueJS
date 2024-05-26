@@ -1,7 +1,7 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
 import { useRouter } from 'vue-router';
-
+import Child from './components/Child.vue'
 const router = useRouter();
 
 const goAbout = () => {
@@ -28,6 +28,7 @@ const getUsers= () => {
     <router-link to="/about">Go to About</router-link> -->
     <router-view></router-view>
   </div>
+  <Child></Child>
 </template>
 
 <style scoped>
